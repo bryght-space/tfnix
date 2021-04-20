@@ -1,2 +1,2 @@
-# nazelisk
-Install bazel with nix, using bazelisk versioning
+# tfnix
+Install terraform with nix
