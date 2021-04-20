@@ -12,10 +12,16 @@ let
     "0.14.4" = ["4a7f99d55d299453a9c2397f90b33d1120669775" "terraform_0_14"];
     "0.14.3" = ["51d0a416d4c4ab1ad6b050ed8cb1c123ab673dd2" "terraform_0_14"];
     "0.14.2" = ["cc9c82074ea179460a1ca0b99322c1e52739f2f2" "terraform_0_14"];
+    "0.14.0" = ["51c28d600a23b58f93940b04757beaef88ef70bb" "terraform_0_14"];
     "0.13.6" = ["810d22fb35287e14125470e3b917b90488ae5ed5" "terraform_0_13"];
     "0.13.5" = ["51d0a416d4c4ab1ad6b050ed8cb1c123ab673dd2" "terraform_0_13"];
+    "0.13.4" = ["c79ff8ddca6a18fc04873221ed2544c41993cd2c" "terraform_0_13"];
+    "0.13.3" = ["eb6e2ac2c033a86afa6a606753aab0dbde8bddda" "terraform_0_13"];
+    "0.13.2" = ["8761381344a56a2e05229e2cbbf8b580d206ceed" "terraform_0_13"];
+    "0.13.1" = ["f99908924015bb83df8186b2c473919be35b43f0" "terraform_0_13"];
     "0.12.30" = ["810d22fb35287e14125470e3b917b90488ae5ed5" "terraform_0_12"];
     "0.12.29" = ["51d0a416d4c4ab1ad6b050ed8cb1c123ab673dd2" "terraform_0_12"];
+    "0.11.14" = ["9b2804b7b3f1efc99036bd5bda6338a680c2f2f1" "terraform_0_11"];
   };
  # 
   getByVersion = version :
