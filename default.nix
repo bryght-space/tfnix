@@ -19,8 +19,16 @@ let
     "0.13.3" = ["eb6e2ac2c033a86afa6a606753aab0dbde8bddda" "terraform_0_13"];
     "0.13.2" = ["8761381344a56a2e05229e2cbbf8b580d206ceed" "terraform_0_13"];
     "0.13.1" = ["f99908924015bb83df8186b2c473919be35b43f0" "terraform_0_13"];
+    "0.13.0" = ["6449c5eee5ef929a8a2f1ac30699a50907e1a2ed" "terraform_0_13"];
     "0.12.30" = ["810d22fb35287e14125470e3b917b90488ae5ed5" "terraform_0_12"];
     "0.12.29" = ["51d0a416d4c4ab1ad6b050ed8cb1c123ab673dd2" "terraform_0_12"];
+    "0.12.28" = ["2db12af9b71e8d33969daad7fa238c8b28add854" "terraform_0_12"];
+    "0.12.27" = ["05c54bd0e1626193347bb5bb5713103942d18629" "terraform_0_12"];
+
+    # "0.12.26" = ["05c54bd0e1626193347bb5bb5713103942d18629" "terraform_0_12"];
+    # "0.12.25" = ["05c54bd0e1626193347bb5bb5713103942d18629" "terraform_0_12"];
+    # "0.12.24" = ["05c54bd0e1626193347bb5bb5713103942d18629" "terraform_0_12"];
+
     "0.11.14" = ["9b2804b7b3f1efc99036bd5bda6338a680c2f2f1" "terraform_0_11"];
   };
  # 
