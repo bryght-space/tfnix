@@ -24,11 +24,9 @@ let
     "0.12.29" = ["51d0a416d4c4ab1ad6b050ed8cb1c123ab673dd2" "terraform_0_12"];
     "0.12.28" = ["2db12af9b71e8d33969daad7fa238c8b28add854" "terraform_0_12"];
     "0.12.27" = ["05c54bd0e1626193347bb5bb5713103942d18629" "terraform_0_12"];
-
-    # "0.12.26" = ["05c54bd0e1626193347bb5bb5713103942d18629" "terraform_0_12"];
-    # "0.12.25" = ["05c54bd0e1626193347bb5bb5713103942d18629" "terraform_0_12"];
-    # "0.12.24" = ["05c54bd0e1626193347bb5bb5713103942d18629" "terraform_0_12"];
-
+    "0.12.26" = ["c9e985469f565fd01292571a88c2a8b46d46bb63" "terraform_0_12"];
+    "0.12.25" = ["0b72a749ae200b30a1ed0379cca7dc989763c8df" "terraform_0_12"];
+    "0.12.24" = ["b5dc07a4b471e6f651af3b13e4bd841b6b3ea6ed" "terraform_0_12"];
     "0.11.14" = ["9b2804b7b3f1efc99036bd5bda6338a680c2f2f1" "terraform_0_11"];
   };
  # 
