@@ -26,7 +26,7 @@ git clean -f
 cp -Rf $tmp_dir/* .
 
 git add .
-git commit --allow-empty -m "Add new release"
+git commit --allow-empty -m "[skip actions] Add new release"
 
 version=`git rev-parse --verify HEAD`
 
@@ -55,5 +55,5 @@ in
 " > example/shell.nix
 
 git add .
-git commit --allow-empty -m "Update example"
+git commit --allow-empty -m "[skip actions] Update example"
 git push
