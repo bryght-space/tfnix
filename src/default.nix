@@ -1,6 +1,7 @@
 with (import ./helpers.nix);
 let
   getByRevision = revision: name: builtins.getAttr name (channelFromRevision revision);
+
   revisions = {
     "0.15.0" = ["e18275de12715ec0296a1e7177bb6f8c583d769c" "terraform_0_15"];
     "0.14.10" = ["e18275de12715ec0296a1e7177bb6f8c583d769c" "terraform_0_14"];
