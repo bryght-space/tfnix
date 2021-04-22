@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  tfnix = import (fetchTarball "https://github.com/bryght-space/tfnix/archive/cfc69df8af0db44e30230413da56540af0b39c80.tar.gz");
+  tfnix = import (fetchTarball "https://github.com/bryght-space/tfnix/archive/dce48802819b91b3d465c75b42c663009a69ed54.tar.gz");
   terraform = tfnix ./.;
 in
   pkgs.mkShell {
