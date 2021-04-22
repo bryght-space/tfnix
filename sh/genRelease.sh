@@ -7,6 +7,8 @@ tmp_dir=$(mktemp -d -t qs1-XXXXXXXXXX)
 
 cp -Rf src/* $tmp_dir
 
+git pull
+
 if (git rev-parse --verify $branch)
 then
   echo "checkout existing version of the branch"
