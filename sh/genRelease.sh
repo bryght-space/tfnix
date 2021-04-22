@@ -15,9 +15,16 @@ then
   extraPushParams=""
   git checkout $branch
 else
-  echo "initial version of the branch"
-  extraPushParams="--set-upstream origin $branch"
-  git checkout --orphan $branch
+  if (git rev-parse --verify origin/$branch)
+  then
+    echo "checkout existing version of remote the branch"
+    extraPushParams=""
+    git checkout -b $branch origin/release
+  else
+    echo "initial version of the branch"
+    extraPushParams="--set-upstream origin $branch"
+    git checkout --orphan $branch
+  fi
 fi
 
 git rm --ignore-unmatch -rf .
