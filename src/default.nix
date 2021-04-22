@@ -29,7 +29,7 @@ let
     "0.12.24" = ["b5dc07a4b471e6f651af3b13e4bd841b6b3ea6ed" "terraform_0_12"];
     "0.11.14" = ["9b2804b7b3f1efc99036bd5bda6338a680c2f2f1" "terraform_0_11"];
   };
- # 
+
   getByVersion = version :
     let
       p        = builtins.getAttr version revisions;
