@@ -13,5 +13,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Run release
-      run: "sh/genRelease.sh"
+      run: |
+        git config --local user.email "${{ github.event.pusher.email }}"
+        git config --local user.name "${{ github.event.pusher.name }}"
+        "sh/genRelease.sh"
       shell: bash
