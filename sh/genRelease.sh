@@ -2,6 +2,7 @@
 
 branch="release"
 current_branch=`git rev-parse --abbrev-ref HEAD`
+current_hash=`git rev-parse --verify HEAD`
 
 tmp_dir=$(mktemp -d -t qs1-XXXXXXXXXX)
 
@@ -25,15 +26,14 @@ git clean -f
 cp -Rf $tmp_dir/* .
 
 git add .
-git commit -m "Add new release"
+git commit --allow-empty -m "Add new release"
 
 version=`git rev-parse --verify HEAD`
 
 git push --set-upstream origin $branch
-
-git clean -f
 git checkout $current_branch
-git reset --hard
+
+git reset --hard origin/$current_branch
 git clean -f
 
 
@@ -55,5 +55,5 @@ in
 " > example/shell.nix
 
 git add .
-git commit -m "Update example"
+git commit --allow-empty -m "Update example"
 git push
