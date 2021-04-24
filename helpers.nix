@@ -26,9 +26,34 @@ let
   ctrim = cs: ltrim (rtrim cs);
   trim = str: charactersToString (ctrim (stringToCharacters str));
   over = ch: (import ch) { overlays = [ ]; };
+
   channelFromRevision = revision : over (fetchTarball "https://github.com/NixOS/nixpkgs/archive/${revision}.tar.gz");
+
+  plugin = packages : uri :
+    packages.stdenv.mkDerivation rec {
+      version = builtins.hashString "sha256" uri;
+      name = "plugin_${builtins.hashString "sha256" uri}";
+
+      src = builtins.fetchurl uri;
+
+      nativeBuildInputs = [
+        packages.autoPatchelfHook
+      ];
+
+      unpackPhase = ''
+        echo "Nothing to unpack"
+      '';
+
+      installPhase = ''
+        install -m755 -D $src $out/bin/terraform-provider-aiven-linux-amd64_v1.2.3
+      '';
+
+    };
+
+
 in {
   inherit
     trim
-    channelFromRevision;
+    channelFromRevision
+    plugin;
 }

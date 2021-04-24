@@ -2,6 +2,11 @@ with (import ./helpers.nix);
 let
   getByRevision = revision: name: builtins.getAttr name (channelFromRevision revision);
 
+  defaultRevision = "e18275de12715ec0296a1e7177bb6f8c583d769c";
+  defaultChannel = channelFromRevision defaultRevision;
+  load = plugin defaultChannel;
+  loadObject = { inherit load; };
+
   revisions = {
     "0.15.0" = ["e18275de12715ec0296a1e7177bb6f8c583d769c" "terraform_0_15"];
     "0.14.10" = ["e18275de12715ec0296a1e7177bb6f8c583d769c" "terraform_0_14"];
@@ -38,4 +43,5 @@ let
       name     = builtins.elemAt p 1;
     in
       getByRevision revision name;
-in path : getByVersion (trim (builtins.readFile (toString "${toString path}/.terraform-version")))
+
+in path : (getByVersion (trim (builtins.readFile (toString "${toString path}/.terraform-version"))) // loadObject)
