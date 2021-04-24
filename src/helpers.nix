@@ -45,15 +45,41 @@ let
       '';
 
       installPhase = ''
-        install -m755 -D $src $out/bin/terraform-provider-aiven-linux-amd64_v1.2.3
+        mkdir -p $out/bin/
+        cp $src $out/bin/
+        chmod 755 $out/bin/*
       '';
 
     };
 
+  pluginZip = packages : uri :
+    packages.stdenv.mkDerivation rec {
+      version = builtins.hashString "sha256" uri;
+      name = "plugin_${builtins.hashString "sha256" uri}";
+
+      src = builtins.fetchurl uri;
+
+      nativeBuildInputs = [
+        packages.autoPatchelfHook
+        packages.unzip
+      ];
+
+      unpackPhase = ''
+        echo "Nothing to unpack"
+      '';
+
+      installPhase = ''
+        mkdir -p $out/bin/
+        unzip $src -d $out/bin/
+        chmod 755 $out/bin/*
+      '';
+
+    };
 
 in {
   inherit
     trim
     channelFromRevision
-    plugin;
+    plugin
+    pluginZip;
 }
